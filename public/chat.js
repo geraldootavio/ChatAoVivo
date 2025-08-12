@@ -1,19 +1,21 @@
 const socket = io();
 
-let username = "";
+function getUsernameFromURL() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('username') || '';
+}
 
-window.addEventListener("DOMContentLoaded", () => {
+let username = getUsernameFromURL();
 
-  while (!username) {
-    username = prompt("Digite seu nome:");
-  }
-
+if (!username) {
+  alert("Nome de usuário não fornecido. Voltando para página inicial.");
+  window.location.href = "index.html";
+} else {
   socket.emit("setUsername", username);
-
-  // Mostrar o chat só depois do nome
   document.querySelector(".container").style.display = "block";
-  document.querySelector(".linha-vertical").style.display = "block";
-});
+  const linhaVertical = document.querySelector(".linha-vertical");
+  if (linhaVertical) linhaVertical.style.display = "block";
+}
 
 const chatBox = document.getElementById("chat-box");
 const userInput = document.getElementById("user-input");

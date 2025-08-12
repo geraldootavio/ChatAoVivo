@@ -8,22 +8,34 @@
 </head>
 
 <body>
-    <div class="linha-vertical"></div>
-    <h1>Projeto Chat Online</h1>
-
-    <div class="container">
-        <div id="chat-box" class="chat-box"></div>
-        <div class="input-area">
-            <input type="text" id="user-input" placeholder="Digite sua mensagem...">
-            <button id="send-btn">Enviar</button>
-        </div>
+    <div id="main-container">
+        <h1>Projeto Chat Online</h1>
+        <button id="enter-btn">Entrar no Chat</button>
     </div>
+    <script>
+        const btn = document.getElementById('enter-btn');
 
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="script.js"></script>
-
+        btn.addEventListener('click', () => {
+            let username = '';
+            while (true) {
+                username = prompt('Digite seu nome:');
+                if (username === null) {
+                    // Usuário cancelou o prompt, sai sem redirecionar
+                    return;
+                }
+                username = username.trim();
+                if (username === '') {
+                    // Se vazio, mostra mensagem no prompt e repete o loop
+                    alert('Por favor, insira seu nome para continuar.');
+                    continue;
+                }
+                break; // nome válido, sai do loop
+            }
+            window.location.href = `chatonline.html?username=${encodeURIComponent(username)}`;
+        });
+    </script>
     <footer class="footer">
-        Created by Geraldo.
+        In development by Geraldo
     </footer>
 </body>
 

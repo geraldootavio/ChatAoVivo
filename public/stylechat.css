@@ -15,7 +15,6 @@ body {
 }
 
 .container {
-    display: none;
     max-width: 800px;
     background-color: rgba(53, 14, 90, 0.089);
     padding: 30px;
@@ -32,19 +31,6 @@ body {
 
 .container:hover {
     box-shadow: 0 4px 20px 8px #6319d8;
-}
-
-#main-container {
-  display: flex;
-  flex-direction: column;  /* organiza verticalmente */
-  align-items: center;     /* centraliza horizontal */
-  justify-content: center; /* centraliza vertical */
-  height: 100vh;           /* ocupa toda altura da viewport */
-  gap: 20px;               /* espaçamento entre h1 e botão */
-}
-
-h1:hover{
-    text-shadow: 0 0 8px #6319d8, 0 0 12px #6319d8;
 }
 
 .chat-box {
@@ -120,18 +106,3 @@ h1:hover{
   z-index: 10;
 }
 
-#enter-btn {
-    padding: 15px 30px;
-    font-size: 20px;
-    border-radius: 8px;
-    border: none;
-    background-color: #4a0e8f;
-    color: white;
-    cursor: pointer;
-    display: block;
-  
-}
-
-#enter-btn:hover {
-    background-color: #6319d8;
-}
