@@ -41,14 +41,23 @@ body {
     padding: 10px;
     border-bottom: 1px solid #4a0e8f;
     text-align: left;
+    scrollbar-width: none; /* Para navegador Firefox */
+}
+
+#chat-box::-webkit-scrollbar {
+  display: none;
 }
 
 .message {
+    display: inline-block;     
+    white-space: normal;
+    max-width: 100%;
     margin: 8px 0;
     padding: 8px;
     border-radius: 5px;
-    max-width: 80%;
+    box-sizing: border-box;
     word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .message.user {
