@@ -2,13 +2,18 @@ const socket = io();
 
 let username = "";
 
-// Pede nome do usuário
-while (!username) {
-  username = prompt("Digite seu nome:");
-}
+window.addEventListener("DOMContentLoaded", () => {
 
-// Avisa o servidor do nome assim que conecta
-socket.emit("setUsername", username);
+  while (!username) {
+    username = prompt("Digite seu nome:");
+  }
+
+  socket.emit("setUsername", username);
+
+  // Mostrar o chat só depois do nome
+  document.querySelector(".container").style.display = "block";
+  document.querySelector(".linha-vertical").style.display = "block";
+});
 
 const chatBox = document.getElementById("chat-box");
 const userInput = document.getElementById("user-input");

@@ -7,15 +7,15 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden;
 }
 
-@media (min-width: 700px) {
-    :root {
-      --bg-url: url(./assets/./images/imageBackGround.jpg);
-    }
-  }
+:root {
+  --bg-url: url('./assets/images/imageBackGround.jpg');
+}
 
 .container {
+    display: none;
     max-width: 800px;
     background-color: rgba(53, 14, 90, 0.089);
     padding: 30px;
@@ -84,6 +84,7 @@ button[type="submit"]:hover {
     box-shadow: 0 0 10px #9b30ff;
     z-index: 1;
     transition: box-shadow 0.3s ease;
+    display: none;
 }
 
 .linha-vertical::before {
