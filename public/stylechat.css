@@ -16,17 +16,18 @@ body {
 
 .container {
     max-width: 800px;
-    background-color: rgba(53, 14, 90, 0.089);
+    background-color: rgba(53, 14, 90, 0.245);
     padding: 30px;
     border-radius: 8px;
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border: 2px solid #4a0e8f;
+    border: 2px solid #4a0e8f00;
     transition: box-shadow 0.3s ease;
     margin: auto;
     color: white;
     position: relative;
     z-index: 2;
+    border-radius: 30px;
 }
 
 .container:hover {
