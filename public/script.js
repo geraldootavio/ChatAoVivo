@@ -2,7 +2,7 @@ const socket = io();
 
 let username = "";
 
-// Pede nome até preencher
+// Pede nome do usuário
 while (!username) {
   username = prompt("Digite seu nome:");
 }
